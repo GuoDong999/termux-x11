@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="touchscreenInputModesEntries">
+        <item>触控板模式 (相对移动指针)</item>
+        <item>模拟触控屏 (跟随点击)</item>
+        <item>绝对触控模式 (直触原点)</item>
+    </string-array>
+    <string-array name="screenIdleTimeoutEntries">
+        <item>从不熄屏 (保持屏幕常亮)</item>
+        <item>1 分钟</item>
+        <item>5 分钟</item>
+        <item>10 分钟</item>
+        <item>20 分钟</item>
+        <item>1 小时</item>
+        <item>跟随系统设置</item>
+    </string-array>
+    <string-array name="transformCapturedPointerEntries">
+        <item>不旋转</item>
+        <item>顺时针旋转 90°</item>
+        <item>逆时针旋转 90°</item>
+        <item>倒置旋转 180°</item>
+        <item>自动适配 (针对触控板)</item>
+    </string-array>
+    <string-array name="displayResolutionVariantsEntries">
+        <item>原生物理分辨率 (Native)</item>
+        <item>等比缩放分辨率 (Scaled)</item>
+        <item>固定预设分辨率 (Exact)</item>
+        <item>自定义分辨率 (Custom)</item>
+    </string-array>
+    <string-array name="displayFilteringVariantsEntries">
+        <item>双线性过滤 (画质平滑平整)</item>
+        <item>最近邻过滤 (像素锐利清晰)</item>
+    </string-array>
+    <string-array name="userActionsEntries">
+        <item>无动作</item>
+        <item>显示/隐藏软键盘</item>
+        <item>显示/隐藏附加按键栏</item>
+        <item>打开偏好设置</item>
+        <item>释放鼠标与键盘捕获</item>
+        <item>切换全屏显示</item>
+        <item>重新启动活动</item>
+        <item>退出程序</item>
+    </string-array>
+    <string-array name="userActionsVolumeDownEntries">
+        <item>@array/userActionsEntries</item>
+        <item>调节系统音量减</item>
+    </string-array>
+    <string-array name="userActionsVolumeUpEntries">
+        <item>@array/userActionsEntries</item>
+        <item>调节系统音量加</item>
+    </string-array>
+    <string-array name="userActionsMediaKeyEntries">
+        <item>@array/userActionsEntries</item>
+        <item>发送系统媒体控制按键</item>
+    </string-array>
+    <string-array name="forceOrientationVariantsEntries">
+        <item>跟随系统自动旋转 (Auto)</item>
+        <item>强制竖屏 (Portrait)</item>
+        <item>强制横屏 (Landscape)</item>
+        <item>强制反向竖屏 (Reverse Portrait)</item>
+        <item>强制反向横屏 (Reverse Landscape)</item>
+    </string-array>
+    <string-array name="ekbarPositionEntries">
+        <item>顶部 (Top)</item>
+        <item>底部 (Bottom)</item>
+        <item>左侧 (Left)</item>
+        <item>右侧 (Right)</item>
+    </string-array>
+</resources>

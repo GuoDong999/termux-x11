@@ -437,9 +437,12 @@ public class LoriePreferences extends AppCompatActivity implements PreferenceFra
                 return;
             ListPreference p = (ListPreference) preference;
             CharSequence[] options = p.getEntries();
-            for (int i=0; i<options.length; i++) {
-                if ("no action".contentEquals(options[i]))
-                    options[i] = "no action (" + text + ")";
+            CharSequence[] values = p.getEntryValues();
+            if (options != null && values != null) {
+                for (int i = 0; i < options.length && i < values.length; i++) {
+                    if ("no action".contentEquals(values[i]))
+                        options[i] = options[i] + " (" + text + ")";
+                }
             }
         }
 

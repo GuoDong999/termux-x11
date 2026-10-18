@@ -5,12 +5,15 @@ on:
   push:
     branches:
       - master
+      - feature/chinese-localization
+      - 'feature/**'
     paths-ignore:
       - '**.md'
       - 'img/**'
   pull_request:
     branches:
       - master
+      - feature/chinese-localization
     paths-ignore:
       - '**.md'
       - 'img/**'
@@ -79,19 +82,26 @@ jobs:
         name: termux-x11-unstripped-libraries-for-ndk-stack
         path: ./lorie/build/intermediates/cxx/Debug/*
 
-    - name: Update Nightly Release
-      uses: andelf/nightly-release@main
-      if: github.repository == 'termux/termux-x11' && github.ref == 'refs/heads/master'
+    - name: Publish Chinese Localization Release
+      uses: softprops/action-gh-release@v2
+      if: success() && (github.ref == 'refs/heads/feature/chinese-localization' || github.ref == 'refs/heads/master')
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: nightly
-        name: 'Nightly Release $$'
+        tag_name: zh-cn-release
+        name: 'Termux:X11 官方中文汉化版'
         draft: false
         prerelease: false
         body: |
-          This is a nightly release of the termux-x11 app.
-          Based on ${{ github.sha }}
+          ### Termux:X11 官方完整中文汉化版
+
+          本版本基于 Termux:X11 官方最新主线源码进行全量深度中文本地化汉化。
+          汉化覆盖设置菜单、分辨率模式、图像缩放、触摸板/模拟触控模式、手势响应、无障碍系统键拦截与按键栏等全部界面与提示。
+
+          #### 安装包说明：
+          * `termux-x11-universal-debug.apk`: 独立安装版 APK（推荐绝大多数手机、掌机与 Droidspaces 容器环境安装使用）
+          * `termux-x11-universal-sharedUid-debug.apk`: Termux 共享 UID 版 APK（需与 Termux 主应用签名一致）
+          * `termux-x11-*-all.deb`: Termux 终端配套包
         files: |
           ./lorie-app/build/outputs/apk/standalone/debug/termux-x11-universal-debug.apk
           ./lorie-app/build/outputs/apk/sharedUid/debug/termux-x11-universal-sharedUid-debug.apk
